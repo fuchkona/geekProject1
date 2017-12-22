@@ -1,0 +1,1472 @@
+$site-width: 1200px
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,900,900i')
+
+html
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  height: 100%
+
+body
+  height: 100%
+
+*
+  -webkit-box-sizing: inherit
+  -moz-box-sizing: inherit
+  box-sizing: inherit
+  &::before, &::after
+    -webkit-box-sizing: inherit
+    -moz-box-sizing: inherit
+    box-sizing: inherit
+
+.box-flex
+  display: flex
+
+.content
+  flex: 1
+
+.wrapper
+  display: flex
+  flex-direction: column
+  min-height: 100%
+
+.container
+  width: $site-width
+  margin: 0 auto
+  padding: 0 30px
+  align-items: center
+
+.header
+  border-bottom: 1px solid #ececec
+
+.header > div
+  justify-content: space-between
+
+.header-left, .header-right
+  align-items: center
+
+.header-right
+  margin-top: 5px
+
+.logo
+  display: flex
+  margin: 29px 35px 17px -4px
+  color: #222222
+  font-family: Lato, serif
+  font-size: 27px
+  font-weight: 300
+  text-transform: uppercase
+  letter-spacing: 0.3px
+  text-decoration: none
+  align-items: center
+  &:focus
+    outline: none
+  img
+    margin-right: 13px
+  span
+    color: #f16d7f
+    font-family: Lato, serif
+    font-weight: 600
+    letter-spacing: 0.68px
+
+.header-search-box
+  margin-top: 6px
+
+.btn-browse
+  width: 88px
+  height: 39px
+  border-radius: 3px 0 0 3px
+  border: 1px solid #e6e6e6
+  font-family: Lato, serif
+  font-size: 14px
+  font-weight: 300
+  line-height: 32px
+  background: #cdcdcc linear-gradient(to bottom, #f9f9f9 0%, #f5f5f5 100%)
+  text-align: left
+  padding-left: 14px
+  > span
+    padding-left: 6px
+  &:focus
+    outline: none
+  &:hover
+    background: #a8a8a8 linear-gradient(to bottom, #ffffff 0%, #dbdbdb 100%)
+
+.search-input
+  width: 279px
+  height: 39px
+  border-radius: 0
+  border: 1px solid #e6e6e6
+  border-right: 0
+  background-color: #ffffff
+  font-family: Lato, serif
+  font-size: 14px
+  font-weight: 300
+  line-height: 32px
+  padding: 0 14px
+  &:focus
+    outline: none
+
+.btn-search
+  height: 39px
+  padding: 0 9px
+  border-radius: 0 3px 3px 0
+  border: 1px solid #e6e6e6
+  border-left: 2px solid #e8e8e8
+  background: #cdcdcc linear-gradient(to bottom, #f9f9f9 0%, #f5f5f5 100%)
+  &:focus
+    outline: none
+  &:hover
+    background: #a8a8a8 linear-gradient(to bottom, #ffffff 0%, #dbdbdb 100%)
+
+.btn-cart
+  margin: 8px 14px 0 0
+  padding: 3px 9px
+  background-color: transparent
+  border: 0
+  &:focus
+    outline: none
+  img
+    width: 36px
+    height: 32px
+
+.btn-my-account
+  padding: 0 20px
+  height: 39px
+  font-family: Lato, serif
+  font-size: 15px
+  font-weight: 400
+  line-height: 32px
+  border: 0
+
+.btn-red
+  background-color: #f16d7f
+  color: #ffffff
+  transition: background-color 0.2s, color 0.2s, outline 0.2s
+  &:focus
+    outline: none
+  &:hover
+    background-color: #ffffff
+    color: #f16d7f
+    outline: 1px solid #f16d7f
+
+.btn-white
+  background-color: #ffffff
+  color: #f16d7f
+  outline: 1px solid #f16d7f
+  transition: background-color 0.2s, color 0.2s, outline 0.2s
+  &:focus
+    outline: inherit
+  &:hover
+    background-color: #f16d7f
+    color: #ffffff
+
+.nav
+  > ul
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0
+    > li
+      list-style-type: none
+      padding: 0 16px
+  a
+    display: block
+    padding: 21px 9px 12px 9px
+    color: #222222
+    font-family: Lato, serif
+    font-size: 14px
+    font-weight: 700
+    text-transform: uppercase
+    text-decoration: none
+    transition: border 0.2s
+    border-bottom: 3px solid transparent
+    &:hover
+      border-bottom: 3px solid #a9a9a9
+  .active
+    border-bottom: 3px solid #ef5b70
+
+.main-slider
+  position: relative
+  height: 613px
+  min-width: $site-width
+  justify-content: center
+  background-color: #e8e8e8
+  > div
+    position: relative
+  &-img
+    height: 100%
+    width: 100%
+  &-title
+    position: absolute
+    left: 30px
+    top: 0
+    height: 100%
+    width: 95%
+    > div
+      position: absolute
+      height: 93px
+      left: 0
+      top: 226px
+      padding-left: 11px
+      border-left: 13px solid #f16d7f
+      color: #222222
+      font-family: Lato, serif
+      font-size: 40px
+      font-weight: 600
+      text-transform: uppercase
+    &-first-line
+      font-family: Lato, serif
+      font-size: 60px
+      font-weight: 600
+      text-transform: uppercase
+      letter-spacing: 1.5px
+      margin-top: -13px
+    &-second-line
+      letter-spacing: 1px
+      margin-top: -2px
+      > span
+        color: #f16d7f
+        letter-spacing: 1px
+
+.special
+  margin-top: 92px
+  margin-bottom: 90px
+  flex-direction: row
+  &-column
+    display: flex
+    flex-direction: column
+    width: 50%
+    &-left
+      padding-right: 9px
+    &-right
+      padding-left: 10px
+  &-img
+    display: block
+    position: relative
+    margin: 8.5px 0
+    transition: box-shadow 0.2s
+    box-shadow: 2px 2px 3px transparent
+    > img
+      width: 100%
+      height: 100%
+    &:hover
+      box-shadow: 2px 2px 3px gray
+      .special-title-first
+        color: #f16d7f
+      .special-title-second
+        color: #222222
+    &-small
+      height: 264px
+    &-big
+      height: 543px
+  &-title
+    position: absolute
+    left: 0
+    top: 26px
+    height: 85px
+    padding: 12px 18px
+    background-color: #ffffff
+    color: #222222
+    font-family: Lato, serif
+    font-size: 18px
+    font-weight: 400
+    text-transform: uppercase
+    > div
+      width: 100%
+    &-first
+      letter-spacing: 0.45px
+      transition: color 0.2s
+      font-size: 18px
+      font-weight: 400
+      text-transform: uppercase
+    &-second
+      color: #f16d7f
+      font-size: 30px
+      letter-spacing: 0.75px
+      transition: color 0.2s
+      margin-top: 5px
+
+.featured-items
+  &-title
+    width: 100%
+    color: #222222
+    font-family: Lato, serif
+    font-size: 30px
+    font-weight: 700
+    line-height: 23px
+    letter-spacing: 0.5px
+    text-align: center
+  &-sub-title
+    width: 100%
+    margin-top: 16px
+    color: #9f9f9f
+    font-family: Lato, serif
+    font-size: 14px
+    font-weight: 400
+    line-height: 12px
+    letter-spacing: 0.35px
+    text-align: center
+  &-box
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-top: 13px
+  &-item
+    display: block
+    position: relative
+    width: 264px
+    margin-top: 47px
+    box-shadow: 0 5px 8px transparent
+    transition: box-shadow 0.3s
+    > figure
+      padding: 0
+      margin: 0
+    &:hover
+      box-shadow: 0 5px 8px grey
+      .featured-items-item-hover
+        display: flex
+        justify-content: center
+        align-items: center
+        visibility: visible
+        opacity: 1
+    &-hover
+      display: flex
+      justify-content: center
+      align-items: center
+      visibility: hidden
+      opacity: 0
+      transition: visibility 0s, opacity 0.3s
+      position: absolute
+      left: 0
+      top: 0
+      height: 280px
+      width: 100%
+      background-color: rgba(58, 56, 56, 0.8)
+    & > img
+      width: 100%
+      height: 280px
+    &-title
+      color: #222222
+      font-family: Lato, serif
+      font-size: 13px
+      font-weight: 400
+      text-transform: uppercase
+      margin: 20px 0 17px 16px
+    &-sub-title
+      color: #f16d7f
+      font-family: Lato, serif
+      font-size: 16px
+      font-weight: 700
+      text-transform: uppercase
+      margin: 17px 0 5px 15px
+  &-btn
+    width: 100%
+    text-align: center
+    margin-top: 79px
+    a
+      padding: 15px 24px
+      border: 0
+      font-family: Lato, serif
+      font-size: 16px
+      font-weight: 700
+      letter-spacing: 0.4px
+      text-decoration: none
+
+.add-to-cart-btn
+  display: flex
+  align-items: center
+  padding: 10px 14px 7px 12px
+  color: #ffffff
+  font-family: Lato, serif
+  font-size: 13px
+  font-weight: 700
+  border: 1px solid #ffffff
+  background-color: transparent
+  img
+    width: 27px
+    height: 25px
+    padding-right: 6px
+  &:focus
+    outline: none
+  &:hover
+    background-color: rgba(58, 56, 56, 0.8)
+
+.features-inline
+  width: 100%
+  min-width: $site-width
+  height: 344px
+  padding-top: 89px
+  margin-top: 107px
+  background-color: #222224
+  > .container > div
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+
+.feature-inline-box
+  text-align: center
+  width: 309px
+  img
+    padding-bottom: 22px
+  .text
+    color: #fbfbfb
+    font-family: Lato, serif
+    font-size: 14px
+    font-weight: 300
+    line-height: 24px
+    letter-spacing: 0.35px
+    h3
+      width: 100%
+      font-size: 20px
+      font-weight: 700
+      letter-spacing: 0.5px
+      margin: 0 0 17px
+      padding: 0
+
+.feature
+  display: inline-flex
+  margin-top: 128px
+  margin-bottom: 95px
+  width: 100%
+  background-color: #222224
+  > img
+    width: 770px
+    height: 532px
+    div
+      flex-direction: column
+  &-box
+    margin: 48px 34px 0 34px
+    > img
+      float: left
+      width: 48px
+    > article
+      margin-left: 77px
+      color: #fbfbfb
+      font-family: Lato, serif
+      font-size: 14px
+      font-weight: 300
+      line-height: 24px
+      letter-spacing: 0.35px
+      > h2
+        width: 100%
+        font-size: 20px
+        font-weight: 700
+        letter-spacing: 0.5px
+        margin: 0 0 17px
+        padding: 0
+
+.subscribe
+  width: 100%
+  min-width: $site-width
+  height: 441px
+  background-image: url('../images/sub.jpg')
+  background-size: cover
+  > div
+    height: 100%
+    > div
+      height: 100%
+      display: inline-flex
+  &-panel
+    &-left
+      height: 100%
+      width: 569px
+      display: inline-flex
+      padding-top: 110px
+      border-right: 1px solid white
+    &-right
+      height: 100%
+      padding-top: 113px
+      padding-left: 95px
+      text-align: center
+      border-left: 1px solid white
+  &-text
+    &-l
+      margin: 14px 70px 0 27px
+      color: #222224
+      font-family: Lato, serif
+      font-size: 15px
+      font-style: italic
+      &-title
+        margin-top: 19px
+        color: #f16d7f
+        font-size: 16px
+        font-weight: 700
+        &-first
+          font-weight: 700
+          letter-spacing: 0.4px
+          line-height: 26px
+        &-second
+          color: #222224
+          font-size: 12px
+          font-weight: 300
+          letter-spacing: 0.3px
+          line-height: 10px
+    &-r
+      &-title
+        font-family: Lato, serif
+        font-weight: 400
+        font-size: 24px
+        letter-spacing: 0.6px
+        text-transform: uppercase
+        margin-top: 29px
+      &-sub-title
+        font-family: Lato, serif
+        font-size: 14px
+        letter-spacing: 0.60px
+  &-btn-l
+    display: inline-flex
+    margin-top: 39px
+    div
+      width: 41px
+      height: 7px
+      margin-right: 10px
+      background-color: #d6d6d6
+      &.active
+        background-color: #f16d7f
+  &-img-r > div
+    position: absolute
+    left: 0
+    top: 111px
+    width: 569px
+    height: 174px
+    color: #222224
+    text-align: center
+  &-btn
+    display: flex
+    justify-content: center
+    margin-top: 33px
+    input
+      width: 280px
+      height: 49px
+      border: 0
+      border-top-left-radius: 23px
+      border-bottom-left-radius: 23px
+      background-color: #e1e1e1
+      opacity: 0.67
+      font-family: Lato, serif
+      font-size: 14px
+      font-weight: 400
+      padding: 0 15px 0 30px
+      &:focus
+        outline: none
+    button
+      width: 107px
+      height: 49px
+      border: 1px solid transparent
+      transition: background-color 0.2s, color 0.2s, border 0.2s
+      border-radius: 0 23px 23px 0
+      background-color: #f16d7f
+      color: #ffffff
+      font-family: Lato, serif
+      font-size: 14px
+      font-weight: 400
+      &:focus
+        outline: none
+      &:hover
+        background-color: #ffffff
+        color: #f16d7f
+        border: 1px solid #f16d7f
+
+.nav-down
+  width: 100%
+  margin-top: 48px
+  &-about
+    width: 427px
+    color: #898989
+    font-family: Lato, serif
+    font-size: 14px
+    font-weight: 300
+    line-height: 24px
+    margin-right: 64px
+  &-menu-item
+    color: #898989
+    font-family: Lato, serif
+    font-size: 16px
+    font-weight: 400
+    letter-spacing: 0.4px
+    line-height: 42px
+    ul
+      padding: 0
+      margin: 0
+    li
+      list-style-type: none
+      padding: 0
+    a
+      text-decoration: inherit
+      color: inherit
+      transition: color 0.3s
+      &:hover
+        color: #f16d7f
+    &-1
+      margin-right: 129px
+    &-2
+      margin-right: 79px
+    & > p
+      color: #f16d7f
+      font-family: Lato, serif
+      font-size: 18px
+      font-weight: 700
+      text-transform: uppercase
+      margin-bottom: 45px
+      margin-top: 38px
+
+.copyright
+  width: 100%
+  min-width: $site-width
+  margin-top: 78px
+  background-color: #e6e6e6
+  padding: 20px 0 32px 0
+  color: #7a7a7a
+  font-family: Lato, serif
+  font-size: 16px
+  font-weight: 400
+  > .container
+    display: flex
+    justify-content: space-between
+  &-social
+    &-btns
+      display: inline-flex
+    &-btn
+      width: 35px
+      height: 35px
+      margin-left: 5px
+      background-color: #ffffff
+      color: #b2b2b2
+      padding-top: 10px
+      text-align: center
+      transition: background-color 0.3s, color 0.3s
+      &:focus
+        outline: none
+      &:hover
+        background-color: #f16d7f
+        color: #f7f7f8
+      &.active
+        background-color: #f16d7f
+        color: #f7f7f8
+        &:hover
+          background-color: #c75b6a
+
+.top-article
+  display: flex
+  align-items: center
+  width: 100%
+  min-width: $site-width
+  height: 151px
+  background-color: #f8f3f4
+  > div
+    padding: 0 30px 0 30px
+    display: flex
+    justify-content: space-between
+  .top-article-title
+    color: #f16d7f
+    font-family: Lato, serif
+    font-size: 24px
+    font-weight: 600
+    text-transform: uppercase
+  .top-article-nav
+    font-family: Lato, serif
+    font-size: 14px
+    font-weight: 300
+    line-height: 20px
+    text-transform: uppercase
+    ul
+      display: inline-flex
+    li
+      list-style-type: none
+      margin: 0 3px
+      color: #636363
+      cursor: default
+      .active
+        color: #f16d7f
+        font-weight: 700
+    a
+      text-decoration: none
+      color: inherit
+      &:hover
+        color: #f16d7f
+
+.products
+  &-left-panel
+    width: 246px
+    &-menu
+      max-height: 0
+      overflow: hidden
+      color: #6f6e6e
+      font-family: Lato, serif
+      font-size: 14px
+      font-weight: 400
+      line-height: 33px
+      transition: max-height 1s
+      &.show
+        max-height: 1000px
+      ul
+        padding: 6px 0 39px 19px
+        margin: 0
+      li
+        list-style-type: none
+        margin: 0 3px
+        color: #636363
+      a
+        text-decoration: none
+        color: inherit
+        &:hover
+          color: #ef5b70
+      &-title
+        padding: 14px 7px 16px 10px
+        margin: 0 0 15px
+        color: #6f6e6e
+        border-left: 8px solid #ef5b70
+        border-bottom: 1px solid #ef5b70
+        font-family: Lato, serif
+        font-size: 14px
+        font-weight: 700
+        line-height: 20px
+        text-transform: uppercase
+        cursor: pointer
+        transition: background-color 0.2s, color 0.2s
+        &:hover
+          background-color: rgba(214, 177, 183, 0.31)
+        span
+          float: right
+        &.active
+          color: #ef5b70
+  &-right-panel
+    width: 851px
+  &-body
+    display: flex
+    justify-content: space-between
+    margin-top: 56px
+  &-top-filter
+    width: 100%
+    height: 166px
+  &-items
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-top: 44px
+  &-item
+    position: relative
+    width: 266px
+    height: 367px
+    margin-bottom: 35px
+    text-decoration: none
+    box-shadow: 2px 2px 3px transparent
+    transition: box-shadow 0.5s
+    > figure
+      margin: 0
+      padding: 0
+    > img
+      width: 100%
+      height: 283px
+    &-title
+      color: #6f6e6e
+      font-family: Lato, serif
+      font-size: 13px
+      font-weight: 400
+      text-transform: uppercase
+      padding: 18px 0 0 17px
+      margin: 0
+    &-price
+      color: #f16d7f
+      font-family: Lato, serif
+      font-size: 16px
+      font-weight: 700
+      text-transform: uppercase
+      padding: 17px 0 0 17px
+      margin: 0
+    &:hover
+      box-shadow: 2px 2px 3px grey
+      .products-item-hover
+        visibility: visible
+        opacity: 1
+    &-hover
+      display: flex
+      justify-content: center
+      align-items: center
+      visibility: hidden
+      transition: visibility 0s, opacity 0.5s
+      opacity: 0
+      position: absolute
+      left: 0
+      top: 0
+      height: 283px
+      width: 100%
+      background-color: rgba(58, 56, 56, 0.8)
+      text-decoration: none
+    &-add-to-cart-btn
+      display: flex
+      align-items: center
+      padding: 10px 14px 7px 12px
+      color: #ffffff
+      font-family: Lato, serif
+      font-size: 13px
+      font-weight: 700
+      border: 1px solid #ffffff
+      background-color: transparent
+      border-radius: 3px
+      img
+        width: 27px
+        height: 25px
+        padding-right: 6px
+      &:focus
+        outline: none
+      &:hover
+        background-color: rgba(58, 56, 56, 0.8)
+    &-refresh-btn
+      width: 60px
+      padding: 13px 16px 13px 18px
+      color: #ffffff
+      border: 1px solid #ffffff
+      background-color: transparent
+      text-align: center
+      border-radius: 3px
+      &:focus
+        outline: none
+      &:hover
+        background-color: rgba(58, 56, 56, 0.8)
+    &-love-btn
+      width: 60px
+      padding: 13px 16px 13px 18px
+      margin: 5px 5px 0 0
+      text-align: center
+      color: #ffffff
+      border: 1px solid #ffffff
+      background-color: transparent
+      border-radius: 3px
+      &:focus
+        outline: none
+      &:hover
+        background-color: rgba(58, 56, 56, 0.8)
+  &-footer
+    display: flex
+    justify-content: space-between
+  &-pagination
+    display: flex
+    justify-content: space-between
+    width: 264px
+    height: 47px
+    padding: 15px 11px 16px 11px
+    color: #aaaaaa
+    border-radius: 3px
+    border: 1px solid #ebebeb
+    background-color: #ffffff
+    font-size: 16px
+    font-weight: 300
+    a
+      text-decoration: none
+      color: inherit
+      padding: 0 6px
+      font-family: Lato, serif
+      font-size: 16px
+      font-weight: 300
+      &.active
+        color: #ef5b70
+      &.inactive:hover
+        color: #aaaaaa
+      &:hover
+        color: #ef5b70
+      &.dots
+        margin: 0 -12px
+        cursor: default
+  &-view-all-btn
+    height: 47px
+    width: 153px
+    border-radius: 3px
+    border: 1px solid #ef5b70
+    background-color: #ffffff
+    padding: 15px 0 16px 0
+    color: #ef5b70
+    transition: background-color 0.3s, color 0.3s, border 0.3s
+    &:focus
+      outline: none
+    &:hover
+      background-color: #ef5b70
+      color: #ffffff
+      border: 1px solid #ffffff
+
+.sort-panel
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  width: 100%
+  height: 53px
+  padding: 10px 9px
+  background-color: #f3f3f3
+
+.sort-box
+  background-color: #ffffff
+  display: inline-flex
+  color: #6f6e6e
+  font-family: Lato, serif
+  font-size: 14px
+  font-weight: 400
+  margin-right: 7px
+  &-label
+    border-right: 1px solid #ef5b70
+    padding: 12px 6px 9px 15px
+  &-btn
+    padding: 12px 10px 9px 10px
+    span
+      padding: 0 10px 0 16px
+
+.filter-panel
+  height: 113px
+  display: flex
+  justify-content: space-between
+
+.filter-sub
+  &-title
+    color: #6f6e6e
+    font-family: Lato, serif
+    font-size: 14px
+    font-weight: 700
+    line-height: 20px
+    text-transform: uppercase
+  &-body
+    margin-top: 22px
+    a
+      text-decoration: none
+      color: inherit
+      &:hover
+        color: #f16d7f
+    &-1
+      width: 176px
+      display: flex
+      flex-wrap: wrap
+      margin-top: 25px
+      justify-content: space-between
+    &-2
+      width: 290px
+      display: flex
+      flex-wrap: wrap
+      margin-top: 25px
+      > div
+        text-align: left
+        width: 70px
+        >
+        input
+          margin-right: 8px
+          &:focus
+            outline: none
+          label
+            width: 100%
+            text-align: left
+            &:hover
+              color: #f16d7f
+    &-3
+      width: 265px
+
+.price-values
+  display: flex
+  justify-content: space-between
+  align-items: center
+  color: #6f6e6e
+  font-family: Lato, serif
+  font-size: 14px
+  font-weight: 400
+  line-height: 26px
+  margin-top: 20px
+
+.single-product
+  &-prew
+    position: relative
+    height: 765px
+    width: 100%
+    margin: 10px auto 0
+    align-items: center
+    background-color: #f7f7f7
+  &-body
+    width: 100%
+    padding: 0 249px
+    margin: 0 auto 118px
+    align-items: center
+    border: 1px solid #eaeaea
+  &-imgs
+    position: absolute
+    display: flex
+    justify-content: center
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    > img
+      height: 100%
+    &-arrow-left
+      position: absolute
+      left: 0
+      top: 365px
+      background-color: rgba(0, 0, 0, 0.2)
+      padding: 18px 21px
+      color: #ffffff
+      font-family: Lato, serif
+      font-size: -24px
+      font-weight: 400
+    &-arrow-right
+      position: absolute
+      right: 0
+      top: 365px
+      background-color: rgba(0, 0, 0, 0.2)
+      padding: 18px 21px
+      color: #ffffff
+      font-family: Lato, serif
+      font-size: -24px
+      font-weight: 400
+  &-category-name
+    width: 100%
+    text-align: center
+    color: #f16d7f
+    font-family: Lato, serif
+    font-size: 14px
+    font-weight: 700
+    line-height: 24px
+    text-transform: uppercase
+    margin-top: 74px
+  &-devider-1
+    width: 100%
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    .dev-light
+      width: 43px
+      height: 1px
+      background-color: #ef5b70
+    .dev-heavy
+      width: 65px
+      height: 3px
+      background-color: #ef5b70
+  &-name
+    width: 100%
+    text-align: center
+    color: #4d4d4d
+    font-family: Lato, serif
+    font-size: 18px
+    font-weight: 400
+    text-transform: uppercase
+    margin-top: 17px
+  &-description
+    width: 100%
+    text-align: center
+    margin-top: 67px
+    color: #5e5e5e
+    font-family: Lato, serif
+    font-size: 14px
+    font-weight: 300
+  &-material-and-design
+    margin-top: 28px
+    display: flex
+    justify-content: center
+    div
+      color: #b9b9b9
+      font-family: Lato, serif
+      font-size: 14px
+      font-weight: 700
+      text-transform: uppercase
+      padding: 0 22px
+    span
+      color: #2f2f2f
+  &-price
+    width: 100%
+    text-align: center
+    color: #ef5b70
+    font-family: Lato, serif
+    font-size: 24px
+    font-weight: 700
+    margin-top: 37px
+  &-devider-line
+    width: 100%
+    height: 1px
+    background-color: #ef5b70
+    margin-top: 41px
+  &-filter-box
+    margin: 62px 52px 0
+    display: flex
+    justify-content: space-between
+    > div
+      display: flex
+      flex-direction: column
+      color: #2f2f2f
+      font-family: Lato, serif
+      font-size: 14px
+      font-weight: 700
+      text-transform: uppercase
+    select, input
+      width: 146px
+      border: 1px solid #eaeaea
+      background-color: #ffffff
+      margin-top: 15px
+      padding: 13px 16px
+      color: #bcbcbc
+      font-family: Lato, serif
+      font-size: 13px
+      font-weight: 400
+    select:focus, input:focus
+      outline: none
+      color: black
+  &-add-to-cart-btn
+    width: 540px
+    border: 1px solid #ef5b70
+    background-color: #ffffff
+    color: #ef5b70
+    transition: background-color 0.3s, color 0.3s, border 0.3s
+    font-family: Lato, serif
+    font-size: 16px
+    font-weight: 700
+    padding: 15px 0
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 26px auto 122px
+    img
+      width: 27px
+      height: 25px
+      padding-right: 6px
+    &:focus
+      outline: none
+    &:hover
+      background-color: rgba(248, 180, 180, 0.8)
+  &-like
+    &-title
+      width: 100%
+      text-align: center
+      color: #4d4d4d
+      font-family: Lato, serif
+      font-size: 24px
+      font-weight: 600
+      text-transform: uppercase
+    &-body
+      display: flex
+      justify-content: space-between
+      margin: 71px 0
+
+.box
+  width: 14px
+  height: 14px
+
+.bg-red
+  background-color: red
+
+.browse-categories
+  position: absolute
+  left: 0
+  top: 0
+  width: 265px
+  border-radius: 5px
+  background-color: #ffffff
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08)
+  padding-bottom: 27px
+  visibility: hidden
+  opacity: 0
+  transition: visibility 0s, opacity 0.3s ease-in-out
+  &.show
+    visibility: visible
+    opacity: 1
+  &-nav
+    padding: 20px 13px 0
+    > p
+      padding: 0 0 8px 4px
+      color: #232323
+      font-family: Lato, serif
+      font-size: 16px
+      font-weight: 500
+      border-bottom: 1px solid #e8e8e8
+    ul
+      padding-left: 10px
+      margin: 0
+    li
+      list-style-type: none
+    a
+      color: #232323
+      font-family: Lato, serif
+      font-size: 14px
+      font-weight: 300
+      line-height: 28px
+      text-decoration: none
+    a:hover
+      color: #f16d7f
+
+.shopping-cart-body
+  margin: 89px 0 76px
+  &-table
+    width: 100%
+    border-spacing: 0
+    th
+      color: #222222
+      font-family: Lato, serif
+      font-size: 13px
+      font-weight: 700
+      line-height: 20px
+      text-transform: uppercase
+      border-bottom: 1px solid #000
+      padding-bottom: 18px
+    td
+      padding: 22px 0
+      text-align: center
+      vertical-align: middle
+      color: #656565
+      font-family: Lato, serif
+      font-size: 13px
+      font-weight: 500
+      line-height: 20px
+      border-bottom: 1px solid #000
+      > span
+        width: 15px
+        height: 15px
+      > a
+        color: #c0c0c0
+      > a:hover
+        color: #f16d7f
+    .product-img
+      width: 103px
+      height: 118px
+      transition: transform 0.2s, outline 0.2s
+      &:hover
+        transform: scale(2, 2)
+        transition: transform 0.5s, outline 0.2s
+        outline: 1px solid #f16d7f
+    .description
+      text-align: left
+      h3
+        color: #222222
+        font-family: Lato, serif
+        font-size: 13px
+        font-weight: 600
+        text-transform: uppercase
+        margin: 0 0 38px
+        a
+          text-decoration: none
+          color: inherit
+          &:hover
+            color: #f16d7f
+      ul
+        margin: 0
+        padding: 0
+      li
+        list-style-type: none
+        color: #575757
+        font-family: Lato, serif
+        font-size: 13px
+        font-weight: 600
+        span
+          color: #6f6e6e
+          font-weight: 300
+    .quantity-input
+      width: 57px
+      border: 1px solid #eaeaea
+      background-color: #ffffff
+      padding: 12px 6px
+      text-align: center
+      color: #656565
+  &-clear-and-continue-shopping
+    width: 100%
+    display: flex
+    justify-content: space-between
+    margin-top: 41px
+    a
+      color: #4a4a4a
+      font-family: Lato, serif
+      font-size: 14px
+      font-weight: 700
+      text-transform: uppercase
+      padding: 20px 40px
+      text-decoration: none
+      border: 1px solid #eaeaea
+      background-color: #ffffff
+      transition: background-color 0.3s, color 0.3s
+      &:hover
+        background-color: #f16d7f
+        color: white
+  &-deal
+    width: 100%
+    margin-top: 62px
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    > div
+      width: (100%/3)
+      .title
+        color: #222222
+        font-family: Lato, serif
+        font-size: 16px
+        font-weight: 700
+        text-transform: uppercase
+      input, select
+        width: 100%
+        margin-top: 17px
+        padding: 18px 20px
+        color: #b1b1b1
+        border: 1px solid #eaeaea
+      button
+        padding: 14px 15px
+        margin-top: 20px
+        background-color: #ffffff
+        border: 1px solid #eaeaea
+        color: #4a4a4a
+        font-family: Lato, serif
+        font-size: 11px
+        font-weight: 700
+        text-transform: uppercase
+        transition: background-color 0.3s, color 0.3s
+      button:focus
+        outline: none
+      button:hover
+        background-color: #f16d7f
+        color: #ffffff
+    &-addresses
+      padding-right: 32px
+    &-discount
+      padding-right: 33px
+      .sub-title
+        margin-top: 28px
+    &-total
+      background-color: #f5f3f3
+      text-align: right
+      padding: 42px
+      .title
+        margin-top: 14px
+        .price
+          margin-left: 10px
+          color: #f16d7f
+      .sub-title
+        .price
+          margin-left: 6px
+      hr
+        margin-top: 20px
+        border: 0
+        border-bottom: 1px solid #e2e2e2
+      a
+        display: block
+        width: 100%
+        margin-top: 14px
+        background-color: #f16d7f
+        padding: 20px 44px
+        color: #ffffff
+        font-family: Lato, serif
+        font-size: 16px
+        font-weight: 700
+        text-transform: uppercase
+        border: none
+        text-decoration: none
+        transition: background-color 0.3s, color 0.3s
+      a:hover
+        background-color: white
+        color: #f16d7f
+        outline: 1px solid #f16d7f
+
+.text-align-left
+  text-align: left
+
+.column-50
+  width: (100%/2)
+
+.checkout
+  &-body
+    width: 100%
+    margin: 88px 0
+  &-item
+    margin-top: 32px
+    padding-bottom: 32px
+    border-bottom: 1px solid #e8e8e8
+    &-title
+      color: #222222
+      font-family: Lato, serif
+      font-size: 16px
+      font-weight: 700
+      text-transform: uppercase
+      transition: color 0.3s
+      &:hover
+        color: #f16d7f
+    &-body
+      display: flex
+      overflow: hidden
+      max-height: 0
+      transition: max-height 1s ease-in-out
+    &-checkbox
+      display: none
+    &-checkbox:checked ~ .checkout-item-body
+      max-height: 1000px
+
+.item-body
+  &-column
+    padding: 39px 35px
+  &-title
+    color: #222222
+    font-family: Lato, serif
+    font-size: 13px
+    font-weight: 600
+    text-transform: uppercase
+  &-sub-title
+    color: #b3b2b2
+    font-family: Lato, serif
+    font-size: 13px
+    font-weight: 400
+    margin-top: 15px
+  &-radio
+    display: block
+    width: 100%
+    margin: 20px 0
+    color: #222222
+    font-family: Lato, serif
+    font-size: 12px
+    font-weight: 600
+    text-transform: uppercase
+    input
+      margin-right: 15px
+  &-btn
+    color: #4a4a4a
+    font-family: Lato, serif
+    font-size: 14px
+    font-weight: 700
+    text-transform: uppercase
+    margin-top: 36px
+    padding: 20px 55px
+    border: 1px solid #eaeaea
+    background-color: #ffffff
+    transition: background-color 0.3s, color 0.2s, outline 0.2s
+    &:focus
+      outline: none
+    &:hover
+      background-color: #f16d7f
+      color: #ffffff
+      outline: 1px solid #f16d7f
+  &-input
+    width: 393px
+    color: #4a4a4a
+    font-family: Lato, serif
+    font-size: 14px
+    font-weight: 400
+    text-transform: uppercase
+    margin-top: 14px
+    padding: 15px
+    border: 1px solid #eaeaea
+    background-color: #ffffff
+    &:focus
+      outline: none
+    &-label
+      margin-top: 22px
+      color: #222222
+      font-family: Lato, serif
+      font-size: 12px
+      font-weight: 400
+      line-height: 20px
+      text-transform: uppercase
+      & span
+        color: #ff0d0d
+        font-size: 17px
+        font-weight: 400
+        line-height: 20px
+  &-forgot-link
+    color: #222222
+    font-family: Lato, serif
+    font-size: 14px
+    font-weight: 600
+    line-height: 20px
+    text-decoration: none
+    margin-left: 31px
+    transition: color 0.2s
+    &:focus
+      outline: none
+    &:hover
+      color: #f16d7f
+
+.text-red
+  color: #ff0d0d
