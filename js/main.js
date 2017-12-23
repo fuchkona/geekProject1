@@ -4,7 +4,7 @@ $('#browse-btn').on('click', function () {
 
 $('#browse-categories').on('mouseleave', function () {
     toogle_browse_show();
-})
+});
 
 function toogle_browse_show() {
     var $body = $('#browse-categories');
@@ -16,3 +16,9 @@ function toogle_browse_show() {
 function goToUrl(url) {
     window.location = url;
 }
+
+$('.products-item-hover, .featured-items-item-hover').on('click', function (e) {
+    if (e.target !== this)
+        return;
+    goToUrl('product.html')
+});

@@ -24,15 +24,9 @@ $('.products-left-panel-menu-title').on('click', function () {
     products_left_panel_menu_show(this);
 });
 
-function products_left_panel_menu_show($this) {
-    var $menu = $($this).next('.products-left-panel-menu');
+function products_left_panel_menu_show(context) {
+    var $menu = $(context).next('.products-left-panel-menu');
     $menu.toggleClass('show');
-    $($this).toggleClass('active');
-    $($this).children('span').toggleClass('fa-caret-up fa-caret-down');
+    $(context).toggleClass('active');
+    $(context).children('span').toggleClass('fa-caret-up fa-caret-down');
 }
-
-$('.products-item-hover').on('click', function (e) {
-    if (e.target !== this)
-        return;
-    goToUrl('product.html')
-});
