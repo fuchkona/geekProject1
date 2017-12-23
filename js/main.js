@@ -1,24 +1,37 @@
 $(function () {
-    $('#browse-btn').on('click', function () {
-        toogle_browse_show();
-    });
-
-    $('#browse-categories').on('mouseleave', function () {
-        toogle_browse_show();
-    });
-
-    function toogle_browse_show() {
-        var $body = $('#browse-categories');
-        var $btn = $('#browse-btn');
-        $body.css({top: $btn.offset().top + $btn.height() + 4, left: $btn.offset().left - 8});
-        $body.toggleClass('show');
-    }
-
+    // just a little function to go away ^_^
     function goToUrl(url) {
         window.location = url;
     }
 
-    $('.products-item-hover, .featured-items-item-hover').on('click', function (e) {
+    // show browse panel on click on browse btn
+    $('#browse-btn').on('click', function () {
+        toggleBrowseShow();
+    });
+
+    // hide browse panel on mouse leave
+    $('#browse-categories').on('mouseleave', function () {
+        toggleBrowseShow();
+    });
+
+    // toggle browse panel visibility
+    function toggleBrowseShow() {
+        togglePanelVisible($('#browse-categories'), $('#browse-btn'), -8, 4);
+    }
+
+    // toggle main cart visibility
+    $('#main-cart-btn').on('click', function () {
+        togglePanelVisible($('#main-cart'), $('#main-cart-btn'), -14, 16);
+    });
+
+    // function for toggle panel's visibility
+    function togglePanelVisible($panel, $object, adjustX, adjustY) {
+        $panel.css({top: $object.offset().top + $object.height() + adjustY, left: $object.offset().left + adjustX})
+        $panel.toggleClass('show');
+    }
+
+
+    $('.products-item-hover').on('click', function (e) {
         if (e.target !== this)
             return;
         goToUrl('product.html')

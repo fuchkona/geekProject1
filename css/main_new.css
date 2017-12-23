@@ -306,66 +306,6 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 13px; }
-.featured-items-item {
-  display: block;
-  position: relative;
-  width: 264px;
-  margin-top: 47px;
-  box-shadow: 0 5px 8px transparent;
-  transition: box-shadow 0.3s; }
-  .featured-items-item > figure {
-    padding: 0;
-    margin: 0; }
-  .featured-items-item:hover {
-    box-shadow: 0 5px 8px grey; }
-    .featured-items-item:hover .featured-items-item-hover {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      visibility: visible;
-      opacity: 1; }
-  .featured-items-item-hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.3s;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 280px;
-    width: 100%;
-    background-color: rgba(58, 56, 56, 0.8); }
-  .featured-items-item > img {
-    width: 100%;
-    height: 280px; }
-  .featured-items-item-title {
-    color: #222222;
-    font-family: Lato, serif;
-    font-size: 13px;
-    font-weight: 400;
-    text-transform: uppercase;
-    margin: 20px 0 17px 16px; }
-  .featured-items-item-sub-title {
-    color: #f16d7f;
-    font-family: Lato, serif;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 17px 0 5px 15px; }
-.featured-items-btn {
-  width: 100%;
-  text-align: center;
-  margin-top: 79px; }
-  .featured-items-btn a {
-    padding: 15px 24px;
-    border: 0;
-    font-family: Lato, serif;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    text-decoration: none; }
 
 .add-to-cart-btn {
   display: flex;
@@ -1453,5 +1393,18 @@ body {
 
 .text-red {
   color: #ff0d0d; }
+
+.main-cart {
+  position: absolute;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 20px 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out; }
+  .main-cart.show {
+    visibility: visible;
+    opacity: 1; }
 
 /*# sourceMappingURL=main_new.css.map */

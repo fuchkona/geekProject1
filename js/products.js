@@ -1,7 +1,7 @@
 $(function () {
     var slider = document.getElementById('price-slider');
-    var price_min = document.getElementById('price_min');
-    var price_max = document.getElementById('price_max');
+    var $price_min = $('#price_min');
+    var $price_max = $('#price_max');
 
     noUiSlider.create(slider, {
         start: [52, 400],
@@ -15,17 +15,17 @@ $(function () {
     slider.noUiSlider.on('update', function (values, handle) {
         var value = values[handle];
         if (handle) {
-            price_max.innerHTML = "$" + Math.round(value);
+            $price_max.text("$" + Math.round(value));
         } else {
-            price_min.innerHTML = "$" + Math.round(value);
+            $price_min.text("$" + Math.round(value));
         }
     });
 
     $('.products-left-panel-menu-title').on('click', function () {
-        products_left_panel_menu_show(this);
+        productsLeftPanelMenuShow(this);
     });
 
-    function products_left_panel_menu_show(context) {
+    function productsLeftPanelMenuShow(context) {
         var $menu = $(context).next('.products-left-panel-menu');
         $menu.toggleClass('show');
         $(context).toggleClass('active');
