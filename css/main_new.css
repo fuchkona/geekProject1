@@ -306,6 +306,17 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 13px; }
+.featured-items-btn {
+  text-align: center; }
+  .featured-items-btn a {
+    font-family: Lato, serif;
+    padding: 18px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 54px;
+    text-decoration: none; }
+    .featured-items-btn a span {
+      margin-left: 9px; }
 
 .add-to-cart-btn {
   display: flex;
@@ -695,7 +706,8 @@ body {
     font-weight: 400;
     text-transform: uppercase;
     padding: 18px 0 0 17px;
-    margin: 0; }
+    margin: 0;
+    cursor: pointer; }
   .products-item-price {
     color: #f16d7f;
     font-family: Lato, serif;
@@ -723,25 +735,6 @@ body {
     width: 100%;
     background-color: rgba(58, 56, 56, 0.8);
     text-decoration: none; }
-  .products-item-add-to-cart-btn {
-    display: flex;
-    align-items: center;
-    padding: 10px 14px 7px 12px;
-    color: #ffffff;
-    font-family: Lato, serif;
-    font-size: 13px;
-    font-weight: 700;
-    border: 1px solid #ffffff;
-    background-color: transparent;
-    border-radius: 3px; }
-    .products-item-add-to-cart-btn img {
-      width: 27px;
-      height: 25px;
-      padding-right: 6px; }
-    .products-item-add-to-cart-btn:focus {
-      outline: none; }
-    .products-item-add-to-cart-btn:hover {
-      background-color: rgba(58, 56, 56, 0.8); }
   .products-item-refresh-btn {
     width: 60px;
     padding: 13px 16px 13px 18px;
@@ -1406,5 +1399,32 @@ body {
   .main-cart.show {
     visibility: visible;
     opacity: 1; }
+  .main-cart .checkout-btn {
+    display: block;
+    border: 1px solid #f16d7f;
+    background-color: #ffffff;
+    color: #f16d7f;
+    font-family: Lato, serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 20px;
+    width: 225px;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 11px; }
+  .main-cart .go-to-cart-btn {
+    display: block;
+    border: 1px solid #eaeaea;
+    background-color: #ffffff;
+    color: #4a4a4a;
+    font-family: Lato, serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 20px;
+    width: 225px;
+    text-align: center;
+    text-decoration: none; }
 
 /*# sourceMappingURL=main_new.css.map */

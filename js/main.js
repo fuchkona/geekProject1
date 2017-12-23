@@ -31,9 +31,17 @@ $(function () {
     }
 
 
-    $('.products-item-hover').on('click', function (e) {
+    $('.products-item').on('click', '.products-item-hover, .products-item-title', function (e) {
         if (e.target !== this)
             return;
         goToUrl('product.html')
+    });
+
+    $('.add-to-cart-btn').on('click', function (e) {
+        var $target = e.target === this ? $(e.target) : $(e.target).parent();
+        var $container = $target.closest('.products-item');
+        var title = $container.find('.products-item-title').text();
+        var price = $container.find('.products-item-price').text().match(/\d+\.+\d+/)[0];
+        console.log(price);
     });
 });
