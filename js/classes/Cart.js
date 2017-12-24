@@ -1,9 +1,9 @@
-function Cart(idCart) {
+function Cart(idCart, $idContainer) {
     Container.call(this, idCart);
 
-    this.countGoods = 0; //Общее количество товаров
     this.amount = 0; //Общая стоимость товаров
-    this.CartItems = []; //Массив для хранения товаров
+    this.goods = []; //Массив для хранения товаров
+    this.$idContainer = $idContainer;
 
     //Получаем все товары, при созаднии корзины
     this.loadCartItems();
@@ -12,18 +12,66 @@ function Cart(idCart) {
 Cart.prototype = Object.create(Container.prototype);
 Cart.prototype.constructor = Cart;
 
-Cart.prototype.render = function (root55) {
-  var $CartDiv = $('<div />', {
-      id: this.id,
-      text: 'Корзина'
-  });
+Cart.prototype.render = function () {
+    var $CartDiv = $('<div />', {
+        id: this.id
+    });
 
-  var $CartItemsDiv = $('<div />', {
-      id: this.id + '_items'
-  });
+    var $CartItemsDiv = $('<div />', {
+        id: this.id + '_items'
+    });
 
-  $CartItemsDiv.appendTo($CartDiv);
-  $CartDiv.appendTo(root55);
+    for (var key in this.goods) {
+        var tempGood = this.goods[key];
+        var $good = $('<div />', {
+            class: 'main-cart-good',
+            'data-id': this.goods[key].g_id
+        });
+
+        var $title = $('<a />', {
+            class: 'main-cart-good-title',
+            text: tempGood.title,
+            href: '#'
+        });
+        $good.append($title);
+
+        var $subTitle = $('<div />', {
+            class: 'main-cart-good-sub-title'
+        });
+
+        var $price = $('<span />', {
+            text: tempGood.count + ' x ' +  tempGood.price.toFixed(2)
+        });
+        $subTitle.append($price);
+
+        var $btn = $('<a />', {
+            class: 'main-cart-good-del-btn',
+            html: '<span class="fa fa-times-circle"></span>',
+        });
+
+        var $self = this;
+        $btn.on('click', function (event) {
+            var $goodContainer = $(event.target).closest('.main-cart-good');
+            $self.removeGood($goodContainer.data('id'));
+            $self.refresh();
+        });
+
+        $subTitle.append($btn);
+
+        $good.append($subTitle);
+
+        $CartItemsDiv.append($good);
+    }
+
+    $CartDiv.append($CartItemsDiv);
+
+    var $amount = $('<p />', {
+        class: 'main-cart-total',
+        html: 'Total: <span>$' + this.amount.toFixed(2) + '</span>'
+    });
+    $CartDiv.append($amount);
+
+    this.$idContainer.append($CartDiv);
 };
 
 
@@ -31,49 +79,72 @@ Cart.prototype.render = function (root55) {
  * Метод получения/загрузки товаров
  */
 Cart.prototype.loadCartItems = function () {
-    var appendId = '#' + this.id + '_items';
+    var self = this;
+    if (sessionStorage.getItem('goods') === null) {
+        $.get({
+            url: 'js/cart.json',
+            dataType: 'json',
+            context: this,
+            success: function (data) {
 
-    //var self = this;
-    $.get({
-        url: 'Cart.json',
-        dataType: 'json',
-        context: this,
-        success: function (data) {
-            var $CartData = $('<div />', {
-                id: 'Cart_data'
-            });
+                self.amount = data.amount;
 
-            this.countGoods = data.Cart.length;
-            this.amount = data.amount;
-
-            $CartData.append('<p>Всего товаров: ' + this.countGoods + '</p>');
-            $CartData.append('<p>Общая сумма: ' + this.amount + '</p>');
-
-            $CartData.appendTo(appendId);
-
-            for (var itemKey in data.Cart)
-            {
-                this.CartItems.push(data.Cart[itemKey]);
+                for (var itemKey in data.goods) {
+                    self.goods.push(data.goods[itemKey]);
+                }
+                self.render();
             }
-        }
-    });
+        });
+    } else {
+        this.goods = JSON.parse(sessionStorage.getItem('goods'));
+        this.amount = JSON.parse(sessionStorage.getItem('amount'));
+        this.render();
+    }
 };
 
-Cart.prototype.add = function (idProduct, price) {
-    var CartItem = {
-        "id_product": idProduct,
-        "price": price
+Cart.prototype.add = function (g_id, title, price) {
+    var newGood = {
+        "g_id": +g_id,
+        "title": title,
+        "count": 1,
+        "price": +price
     };
 
-    this.countGoods++;
-    this.amount += price;
-    this.CartItems.push(CartItem);
+    this.amount += newGood.price;
+
+    var found = false;
+    for (var key in this.goods) {
+        if (this.goods[key].g_id === newGood.g_id) {
+            found = true;
+            this.goods[key].count++;
+        }
+    }
+    if (!found) {
+        this.goods.push(newGood);
+    }
+
+    sessionStorage.setItem('goods', JSON.stringify(this.goods));
+    sessionStorage.setItem('amount', JSON.stringify(this.amount));
+
     this.refresh(); //Перерисовываем корзину
 };
 
+Cart.prototype.removeGood = function (g_id) {
+    var found = -1;
+    for (var i = 0; i < this.goods.length; i++) {
+        if (this.goods[i].g_id === g_id) {
+            found = i;
+        }
+    }
+    if (found > -1) {
+        this.amount -= this.goods[found].count * this.goods[found].price;
+        this.goods.splice(found, 1);
+        sessionStorage.setItem('goods', JSON.stringify(this.goods));
+        sessionStorage.setItem('amount', JSON.stringify(this.amount));
+    }
+};
+
 Cart.prototype.refresh = function () {
-    var $CartData = $('#Cart_data');
-    $CartData.empty(); //Очищаем содержимое контейнера
-    $CartData.append('<p>Всего товаров: ' + this.countGoods + '</p>');
-    $CartData.append('<p>Общая сумма: ' + this.amount + '</p>');
+    this.$idContainer.empty(); //Очищаем содержимое контейнера
+    this.render();
 };

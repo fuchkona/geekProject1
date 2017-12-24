@@ -1,0 +1,18 @@
+{
+  "result": 0,
+  "goods": [
+    {
+      "g_id": 125,
+      "title": "JEANS",
+      "count": 1,
+      "price": 175
+    },
+    {
+      "g_id": 137,
+      "title": "JACKET",
+      "count": 1,
+      "price": 125
+    }
+  ],
+  "amount": 300
+}

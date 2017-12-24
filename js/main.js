@@ -1,4 +1,6 @@
 $(function () {
+    var cart = new Cart(777, $('#main-cart-body'));
+
     // just a little function to go away ^_^
     function goToUrl(url) {
         window.location = url;
@@ -40,8 +42,9 @@ $(function () {
     $('.add-to-cart-btn').on('click', function (e) {
         var $target = e.target === this ? $(e.target) : $(e.target).parent();
         var $container = $target.closest('.products-item');
+        var g_id = $container.attr('id').match(/\d+/)[0];
         var title = $container.find('.products-item-title').text();
         var price = $container.find('.products-item-price').text().match(/\d+\.+\d+/)[0];
-        console.log(price);
+        cart.add(g_id, title, price);
     });
 });
