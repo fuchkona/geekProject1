@@ -20,47 +20,50 @@ Cart.prototype.render = function () {
     var $CartItemsDiv = $('<div />', {
         id: this.id + '_items'
     });
+    if (this.goods.length > 0) {
+        for (var key in this.goods) {
+            var tempGood = this.goods[key];
+            var $good = $('<div />', {
+                class: 'main-cart-good',
+                'data-id': this.goods[key].g_id
+            });
 
-    for (var key in this.goods) {
-        var tempGood = this.goods[key];
-        var $good = $('<div />', {
-            class: 'main-cart-good',
-            'data-id': this.goods[key].g_id
-        });
+            var $title = $('<a />', {
+                class: 'main-cart-good-title',
+                text: tempGood.title,
+                href: '#'
+            });
+            $good.append($title);
 
-        var $title = $('<a />', {
-            class: 'main-cart-good-title',
-            text: tempGood.title,
-            href: '#'
-        });
-        $good.append($title);
+            var $subTitle = $('<div />', {
+                class: 'main-cart-good-sub-title'
+            });
 
-        var $subTitle = $('<div />', {
-            class: 'main-cart-good-sub-title'
-        });
+            var $price = $('<span />', {
+                text: tempGood.count + ' x ' + tempGood.price.toFixed(2)
+            });
+            $subTitle.append($price);
 
-        var $price = $('<span />', {
-            text: tempGood.count + ' x ' +  tempGood.price.toFixed(2)
-        });
-        $subTitle.append($price);
+            var $btn = $('<a />', {
+                class: 'main-cart-good-del-btn',
+                html: '<span class="fa fa-times-circle"></span>',
+            });
 
-        var $btn = $('<a />', {
-            class: 'main-cart-good-del-btn',
-            html: '<span class="fa fa-times-circle"></span>',
-        });
+            var $self = this;
+            $btn.on('click', function (event) {
+                var $goodContainer = $(event.target).closest('.main-cart-good');
+                $self.removeGood($goodContainer.data('id'));
+                $self.refresh();
+            });
 
-        var $self = this;
-        $btn.on('click', function (event) {
-            var $goodContainer = $(event.target).closest('.main-cart-good');
-            $self.removeGood($goodContainer.data('id'));
-            $self.refresh();
-        });
+            $subTitle.append($btn);
 
-        $subTitle.append($btn);
+            $good.append($subTitle);
 
-        $good.append($subTitle);
-
-        $CartItemsDiv.append($good);
+            $CartItemsDiv.append($good);
+        }
+    } else {
+        $CartItemsDiv.append($('<p />', {text: 'Your shopping cart is empty'}));
     }
 
     $CartDiv.append($CartItemsDiv);
@@ -138,6 +141,9 @@ Cart.prototype.removeGood = function (g_id) {
     }
     if (found > -1) {
         this.amount -= this.goods[found].count * this.goods[found].price;
+        if (this.amount < 0) {
+            this.amount = 0
+        }
         this.goods.splice(found, 1);
         sessionStorage.setItem('goods', JSON.stringify(this.goods));
         sessionStorage.setItem('amount', JSON.stringify(this.amount));
